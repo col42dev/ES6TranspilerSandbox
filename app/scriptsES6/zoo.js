@@ -1,5 +1,5 @@
 var getBarkStyle = function(isHowler) {
-  return isHowler? 'woooooow!': 'woof, woof!';
+  return isHowler? 'howler!': 'non-howler';
 };
 export function Dog(name, breed) {
   this.bark = function() {

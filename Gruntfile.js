@@ -168,9 +168,10 @@ module.exports = function(grunt) {
         }
       },
       dev: {
-        src: ['<%= yeoman.app %>/scripts/main.js'],
-        dest: '.tmp/scripts/main.js',
+        src: ['<%= yeoman.app %>/scriptsES6/main.js'],
+        dest: '.tmp/scripts/bundle.js',
         options: {
+          transform: [["babelify", { "stage": 0 }]],
           debug: true,
           external: ['jquery', 'lodash', 'backbone']
         }
