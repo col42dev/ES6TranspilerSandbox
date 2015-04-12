@@ -1,3 +1,10 @@
+/**
+ * scripts/zoo.js
+ *
+ * Uses ES6 export keyword to export functions for use by other modules.
+ */
+
+
 var getBarkStyle = function(isHowler) {
   return isHowler? 'howler!': 'non-howler';
 };
