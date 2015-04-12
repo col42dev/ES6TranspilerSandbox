@@ -1,7 +1,6 @@
 /**
  * scripts/app.js
- * App implementation.
-
+ * App implementation useing module pattern.
  */
 
 import { Dog, Wolf } from './functionExports';
@@ -15,38 +14,35 @@ export function App() {
   };
 
   var demoImportedFunctionCall = function () {
-   	var myDog = new Dog('Sherlock', 'beagle');
-	console.log(myDog.bark()); // Sherlock: 
+    var myDog = new Dog('Sherlock', 'beagle');
+    console.log(myDog.bark()); // Sherlock: 
 
-	var myWolf = new Wolf('Werewolf');
-	console.log(myWolf.bark()); // Werewolf:
+    var myWolf = new Wolf('Werewolf');
+    console.log(myWolf.bark()); // Werewolf:
   };
-
 
   // Instaniate imported myModule objects.
   // Note, avoid use of 'new' keyword to create these instances.
   var demoModulePattern = function () {
+    // single myModule instance 
+    var myModuleInstance = myModule();
 
-	// single myModule instance 
-	var myModuleInstance = myModule();
+    // create an array of myModule instances
+    var arrayOfMyModuleIntances = [];
+    arrayOfMyModuleIntances.push( myModule());
+    arrayOfMyModuleIntances.push( myModule());
+    arrayOfMyModuleIntances.push( myModule());
 
-	// create an array of myModule instances
-	var arrayOfMyModuleIntances = [];
-	arrayOfMyModuleIntances.push( myModule());
-	arrayOfMyModuleIntances.push( myModule());
-	arrayOfMyModuleIntances.push( myModule());
-
-	// accces public method for each myModule instance in the array.
-	arrayOfMyModuleIntances.forEach( function( thisModuleInstance) {
-		console.log( 'module random percentage = ' + thisModuleInstance.getRandomPercentage());
-	});
+    // accces public method for each myModule instance in the array.
+    arrayOfMyModuleIntances.forEach( function( thisModuleInstance) {
+      console.log( 'module random percentage = ' + thisModuleInstance.getRandomPercentage());
+    });
   };
 
   return {
   	beep: publicMethod,
   	demoImportedFunctionCall : demoImportedFunctionCall,
   	demoModulePattern : demoModulePattern
-
   };
 };
 
