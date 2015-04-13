@@ -3,7 +3,7 @@
  *
  * This is the starting point for your application.
  */
-
+"use strict";
 
 import { App } from './app';
 
@@ -13,3 +13,7 @@ app.beep();
 app.demoImportedFunctionCall();
 app.demoModulePattern();
 app.demoClassInvocation();
+app.demoClosure();
+app.demoPrototypalClassInvocation();
+app.demoPrototypalClassIheritance();
+app.demoArrayIteration();

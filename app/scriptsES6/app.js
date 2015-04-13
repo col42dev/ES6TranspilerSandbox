@@ -3,9 +3,17 @@
  * App implementation useing module pattern.
  */
 
+"use strict";
+
 import { Dog, Wolf } from './functionExports';
 import { myModule } from './modulePattern';
 import { cChild } from './classes';
+import { digit_name } from './closure';
+import { prototypalClassInvocation } from './prototypalClassInvocation';
+import { prototypalClassIheritance } from './prototypalClassInvocation';
+
+import { arrayIteration } from './arrayIteration';
+
 
 export function App() {
   console.log('app initialized');
@@ -40,18 +48,41 @@ export function App() {
     });
   };
 
-
   // Instaniate using imported classes.
   var demoClassInvocation = function () {
     var myChild = new cChild('dwayne', 27);
     myChild.sayName();
   };
 
+  // Closure 
+  var demoClosure = function () {
+    console.log( "digit name 4  is " + digit_name(4));
+  };
+
+
+  // Prototypal Class 
+  var demoPrototypalClassInvocation = function () {
+    prototypalClassInvocation();
+  };
+
+  // Prototypal Class 
+  var demoPrototypalClassIheritance = function () {
+    prototypalClassIheritance();
+  };
+
+  var demoArrayIteration  = function() {
+    arrayIteration();
+  }
+
   return {
   	beep: publicMethod,
   	demoImportedFunctionCall : demoImportedFunctionCall,
   	demoModulePattern : demoModulePattern,
-    demoClassInvocation : demoClassInvocation
+    demoClassInvocation : demoClassInvocation,
+    demoClosure : demoClosure,
+    demoPrototypalClassInvocation : demoPrototypalClassInvocation,
+    demoPrototypalClassIheritance : demoPrototypalClassIheritance,
+    demoArrayIteration : demoArrayIteration
   };
 };
 

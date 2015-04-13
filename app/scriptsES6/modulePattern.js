@@ -6,6 +6,7 @@
  * ref: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
  */
 
+"use strict";
 
 export function myModule() {
 

@@ -1,3 +1,5 @@
+"use strict";
+
 // http://ilikekillnerds.com/2015/02/a-guide-to-es6-classes/
 
 class someClass {
