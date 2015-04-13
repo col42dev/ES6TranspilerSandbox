@@ -5,6 +5,7 @@
 
 import { Dog, Wolf } from './functionExports';
 import { myModule } from './modulePattern';
+import { cChild } from './classes';
 
 export function App() {
   console.log('app initialized');
@@ -39,10 +40,18 @@ export function App() {
     });
   };
 
+
+  // Instaniate using imported classes.
+  var demoClassInvocation = function () {
+    var myChild = new cChild('dwayne', 27);
+    myChild.sayName();
+  };
+
   return {
   	beep: publicMethod,
   	demoImportedFunctionCall : demoImportedFunctionCall,
-  	demoModulePattern : demoModulePattern
+  	demoModulePattern : demoModulePattern,
+    demoClassInvocation : demoClassInvocation
   };
 };
 

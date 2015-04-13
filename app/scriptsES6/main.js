@@ -12,3 +12,4 @@ var app = App();
 app.beep();
 app.demoImportedFunctionCall();
 app.demoModulePattern();
+app.demoClassInvocation();
