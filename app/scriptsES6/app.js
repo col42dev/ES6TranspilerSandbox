@@ -11,8 +11,8 @@ import { cChild } from './classes';
 import { digit_name } from './closure';
 import { prototypalClassInvocation } from './prototypalClassInvocation';
 import { prototypalClassIheritance } from './prototypalClassInvocation';
-
 import { arrayIteration } from './arrayIteration';
+import { myGenerators } from './generators';
 
 
 export function App() {
@@ -74,6 +74,10 @@ export function App() {
     arrayIteration();
   }
 
+  var demoGenerators  = function() {
+    myGenerators();
+  }
+
   return {
   	beep: publicMethod,
   	demoImportedFunctionCall : demoImportedFunctionCall,
@@ -82,7 +86,8 @@ export function App() {
     demoClosure : demoClosure,
     demoPrototypalClassInvocation : demoPrototypalClassInvocation,
     demoPrototypalClassIheritance : demoPrototypalClassIheritance,
-    demoArrayIteration : demoArrayIteration
+    demoArrayIteration : demoArrayIteration,
+    demoGenerators : demoGenerators
   };
 };
 

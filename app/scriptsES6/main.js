@@ -17,3 +17,4 @@ app.demoClosure();
 app.demoPrototypalClassInvocation();
 app.demoPrototypalClassIheritance();
 app.demoArrayIteration();
+app.demoGenerators();
